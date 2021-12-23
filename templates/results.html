@@ -1,0 +1,246 @@
+{% extends "base.html" %}
+
+{% block title %} Results! {% endblock %}
+
+{% block content %}
+	<div name="about" class="bg-blue-100 shadow rounded">
+		<h2 class=" text-red font-serif text-2xl p-2">
+			Look at who you are
+		</h2>
+
+		<h3 class=" text-black font-serif text-xl p-2">
+			View your scores compared to rest of users
+		</h3>
+	</div>
+
+	<div class="flex xl:flex-row lg: flex-col">
+		<div class="xl:w-4/12 lg:w-8-12 flex flex-row mt-10">
+			<div class="w-3/6 bg-white rounded-lg shadow-sm h-3/4 1 p-2">
+				<div class="flex justify-between items-center"><h1 class="font-extrabold tracking-wider">
+					All Users</h1>
+				</div>
+				<div class="flex flex-col mt-5 gap-7 text-sm">
+
+					<div class="bg-blue-50 flex justify-between items-center p-3 rounded-sm shadow-sm">
+						<div class="flex justify-start items-center gap-2">
+
+							<div><p class="text-gray-700 font-bold tracking-wider">Extraversion</p>
+								<p class="text-gray-400 text-xs">Averages for all Users</p></div>
+						</div>
+						<span class="font-bold text-blue-600">{{ avgAllUsers.get('extAvg') }}</span></div>
+
+					<div class="bg-pink-50 flex justify-between items-center p-3 rounded-sm shadow-sm">
+						<div class="flex justify-start items-center gap-2">
+
+							<div><p class="text-gray-700 font-bold tracking-wider">Neuroticism</p>
+								<p class="text-gray-400 text-xs">Averages for all Users</p></div>
+						</div>
+						<span class="font-bold text-pink-500">{{ avgAllUsers.get('neuroAvg') }}</span></div>
+					<div class="bg-green-50 flex justify-between items-center p-3 rounded-sm shadow-sm">
+						<div class="flex justify-start items-center gap-2">
+
+							<div><p class="text-gray-700 font-bold tracking-wider">Agreeableness</p>
+								<p class="text-gray-400 text-xs">Averages for all Users</p></div>
+						</div>
+						<span class="font-bold text-green-500">{{ avgAllUsers.get('agrAvg') }}</span></div>
+					<div class="bg-indigo-50 flex justify-between items-center p-3 rounded-sm shadow-sm">
+						<div class="flex justify-start items-center gap-2">
+
+							<div><p class="text-gray-700 font-bold tracking-wider">Conscientiousness</p>
+								<p class="text-gray-400 text-xs">Averages for all Users</p></div>
+						</div>
+						<span class="font-bold text-indigo-500">{{ avgAllUsers.get('consAvg') }}</span></div>
+					<div class="bg-yellow-50 flex justify-between items-center p-3 rounded-sm shadow-sm">
+						<div class="flex justify-start items-center gap-2">
+							<div><p class="text-gray-700 font-bold tracking-wider">Openness</p>
+								<p class="text-gray-400 text-xs">Averages for all Users</p></div>
+						</div>
+						<span class="font-bold text-yellow-500">{{ avgAllUsers.get('openAvg') }}</span>
+					</div>
+
+				</div>
+			</div>
+			<div class="w-3/6 bg-white rounded-lg shadow-sm h-3/4 1 p-2">
+				<div class="flex justify-between items-center"><h1 class="font-extrabold tracking-wider">
+					{{ continent }}</h1>
+				</div>
+				<div class="flex flex-col mt-5 gap-7 text-sm">
+
+					<div class="bg-blue-50 flex justify-between items-center p-3 rounded-sm shadow-sm">
+						<div class="flex justify-start items-center gap-2">
+
+							<div><p class="text-gray-700 font-bold tracking-wider">Extraversion</p>
+								<p class="text-gray-400 text-xs">Averages for Continent</p></div>
+						</div>
+						<span class="font-bold text-blue-600"> {{ avgContinent.get('avg_ext') }}</span></div>
+
+					<div class="bg-pink-50 flex justify-between items-center p-3 rounded-sm shadow-sm">
+						<div class="flex justify-start items-center gap-2">
+
+							<div><p class="text-gray-700 font-bold tracking-wider">Neuroticism</p>
+								<p class="text-gray-400 text-xs">Averages for Continent</p></div>
+						</div>
+						<span class="font-bold text-pink-500">{{ avgContinent.get('avg_neuro') }}</span></div>
+					<div class="bg-green-50 flex justify-between items-center p-3 rounded-sm shadow-sm">
+						<div class="flex justify-start items-center gap-2">
+
+							<div><p class="text-gray-700 font-bold tracking-wider">Agreeableness</p>
+								<p class="text-gray-400 text-xs">Averages for Continent</p></div>
+						</div>
+						<span class="font-bold text-green-500">{{ avgContinent.get('avg_agr') }}</span></div>
+					<div class="bg-indigo-50 flex justify-between items-center p-3 rounded-sm shadow-sm">
+						<div class="flex justify-start items-center gap-2">
+
+							<div><p class="text-gray-700 font-bold tracking-wider">Conscientiousness</p>
+								<p class="text-gray-400 text-xs">Averages for Continent</p></div>
+						</div>
+						<span class="font-bold text-indigo-500">{{ avgContinent.get('avg_cons') }}</span></div>
+					<div class="bg-yellow-50 flex justify-between items-center p-3 rounded-sm shadow-sm">
+						<div class="flex justify-start items-center gap-2">
+							<div><p class="text-gray-700 font-bold tracking-wider">Openness</p>
+								<p class="text-gray-400 text-xs">Averages for Continent</p></div>
+						</div>
+						<span class="font-bold text-yellow-500">{{ avgContinent.get('avg_open') }}</span>
+					</div>
+
+				</div>
+			</div>
+			<div class="w-3/6 bg-white rounded-lg shadow-sm h-3/4 1 p-2">
+				<div class="flex justify-between items-center"><h1 class="font-extrabold tracking-wider">
+					{{ country }}</h1>
+				</div>
+				<div class="flex flex-col mt-5 gap-7 text-sm">
+
+					<div class="bg-blue-50 flex justify-between items-center p-3 rounded-sm shadow-sm">
+						<div class="flex justify-start items-center gap-2">
+
+							<div><p class="text-gray-700 font-bold tracking-wider">Extraversion</p>
+								<p class="text-gray-400 text-xs">Averages for Country</p></div>
+						</div>
+						<span class="font-bold text-blue-600">10</span></div>
+
+					<div class="bg-pink-50 flex justify-between items-center p-3 rounded-sm shadow-sm">
+						<div class="flex justify-start items-center gap-2">
+
+							<div><p class="text-gray-700 font-bold tracking-wider">Neuroticism</p>
+								<p class="text-gray-400 text-xs">Averages for Country</p></div>
+						</div>
+						<span class="font-bold text-pink-500">10</span></div>
+					<div class="bg-green-50 flex justify-between items-center p-3 rounded-sm shadow-sm">
+						<div class="flex justify-start items-center gap-2">
+
+							<div><p class="text-gray-700 font-bold tracking-wider">Agreeableness</p>
+								<p class="text-gray-400 text-xs">Averages for Country</p></div>
+						</div>
+						<span class="font-bold text-green-500">10</span></div>
+					<div class="bg-indigo-50 flex justify-between items-center p-3 rounded-sm shadow-sm">
+						<div class="flex justify-start items-center gap-2">
+
+							<div><p class="text-gray-700 font-bold tracking-wider">Conscientiousness</p>
+								<p class="text-gray-400 text-xs">Averages for Country</p></div>
+						</div>
+						<span class="font-bold text-indigo-500">10</span></div>
+					<div class="bg-yellow-50 flex justify-between items-center p-3 rounded-sm shadow-sm">
+						<div class="flex justify-start items-center gap-2">
+							<div><p class="text-gray-700 font-bold tracking-wider">Openness</p>
+								<p class="text-gray-400 text-xs">Averages for Country</p></div>
+						</div>
+						<span class="font-bold text-yellow-500">10</span>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+		<div class="w-2/4 md:w-2/4 lg:6/12 mx-auto relative ">
+			<div class="mt-10">
+				<!-- Card 1 -->
+				<div class="transform transition cursor-pointer hover:-translate-y-2 ml-10 relative flex items-center
+				 px-6 py-4 bg-blue-600 text-white rounded mb-10 flex-col md:flex-row space-y-4 md:space-y-0">
+					<!-- Content that showing in the box -->
+					<div class="flex-auto">
+						<h1 class="text-lg">Extraversion</h1>
+						<h1 class="text-xl font-bold">{{ ext }}</h1>
+					</div>
+					<a href="#" class="text-center text-white hover:text-gray-300">{{ extNum }} / 50</a>
+				</div>
+
+				<div class="justify-end">
+
+
+				</div>
+
+
+				<!-- Card 2 -->
+				<div class="transform transition cursor-pointer hover:-translate-y-2 ml-10 relative flex items-center px-6 py-4 bg-pink-600 text-white rounded mb-10 flex-col md:flex-row space-y-4 md:space-y-0">
+
+					<!-- Content that showing in the box -->
+					<div class="flex-auto">
+						<h1 class="text-lg">Neuroticism Score</h1>
+						<h1 class="text-xl font-bold">{{ neuro }} </h1>
+					</div>
+					<a href="#" class="text-center text-white hover:text-gray-300">{{ neuroNum }} / 50</a>
+				</div>
+
+
+				<!-- Card 3 -->
+				<div class="transform transition cursor-pointer hover:-translate-y-2 ml-10 relative flex items-center px-6 py-4 bg-green-600 text-white rounded mb-10 flex-col md:flex-row space-y-4 md:space-y-0">
+
+					<!-- Content that showing in the box -->
+					<div class="flex-auto">
+						<h1 class="text-lg">Agreeableness</h1>
+						<h1 class="text-xl font-bold">{{ agr }}</h1>
+					</div>
+					<a href="#" class="text-center text-white hover:text-gray-300">{{ agrNum }} / 50</a>
+				</div>
+
+				<!-- Card 4 -->
+				<div class="transform transition cursor-pointer hover:-translate-y-2 ml-10 relative flex items-center px-6 py-4 bg-purple-600 text-white rounded mb-10 flex-col md:flex-row space-y-4 md:space-y-0">
+
+					<!-- Content that showing in the box -->
+					<div class="flex-auto">
+						<h1 class="text-lg">Conscientiousness</h1>
+						<h1 class="text-xl font-bold">{{ cns }}</h1>
+					</div>
+					<a href="#" class="text-center text-white hover:text-gray-300">{{ cnsNum }} / 50</a>
+				</div>
+
+				<!-- Card 5 -->
+				<div class="transform transition cursor-pointer hover:-translate-y-2 ml-10 relative flex items-center px-6 py-4 bg-yellow-600 text-white rounded mb-10 flex-col md:flex-row">
+
+					<!-- Content that showing in the box -->
+					<div class="flex-auto">
+						<h1 class="text-lg">Openness</h1>
+						<h1 class="text-xl font-bold">{{ opn }}</h1>
+					</div>
+					<a href="#" class="text-center text-white hover:text-gray-300">{{ opnNum }} / 50</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<h3 class="text-black font-serif text-xl p-2 ">
+
+		<b>Openness </b> - People who like to learn new things and enjoy new experiences usually score high in openness.
+		Openness includes traits like being insightful and imaginative and having a wide variety of interests. <br>
+
+		<b>Conscientiousness</b> - People that have a high degree of conscientiousness are reliable and prompt. Traits
+		include
+		being organized, methodic, and thorough. <br>
+
+		<b>Extraversion</b> - Extraverts get their energy from interacting with others, while introverts get their
+		energy from
+		within themselves. Extraversion includes the traits of energetic, talkative, and assertive. <br>
+
+		<b>Agreeableness </b> - These individuals are friendly, cooperative, and compassionate. People with low
+		agreeableness
+		may be more distant. Traits include being kind, affectionate, and sympathetic. <br>
+
+		<b>Neuroticism</b> - Neuroticism is also sometimes called Emotional Stability. This dimension relates to one’s
+		emotional stability and degree of negative emotions. People that score high on neuroticism often experience
+		emotional instability and negative emotions. Traits include being moody and tense.
+		<br>
+	</h3>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> {% block title %}{% endblock %}</title>
+	<link rel="stylesheet" href="{{ url_for('static',filename='public/style.css') }}">
+</head>
+
+<div id="error messages" class="place-content-center">
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+				<div class="py-2 px-2 my-2 bg-red-300 text-red-800 rounded border border-red-600 animate-pulse flex justify-between">
+					<div>
+						{{ message }}
+					</div>
+
+					<div id="x_button" class="inline items-end">
+						<a href="{{ url_for('index') }}">
+							<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-square-x"
+								 width="30"
+								 height="30"
+								 viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+								 stroke-linecap="round"
+								 stroke-linejoin="round">
+								<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+								<rect x="4" y="4" width="16" height="16" rx="2"/>
+								<path d="M10 10l4 4m0 -4l-4 4"/>
+							</svg>
+						</a>
+
+					</div>
+
+				</div>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+</div>
+<body class="bg-blue-200 bg-fixed min-h-screen justify-between">
+
+{% block content %} {% endblock %}
+
+</body>
+</html>

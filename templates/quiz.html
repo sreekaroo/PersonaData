@@ -1,0 +1,545 @@
+{% extends "base.html" %}
+
+{% block title %} Quiz {% endblock %}
+
+{% block content %}
+
+	<div id="main content container" class="flex-row place-content-start md:place-content-center">
+
+
+		<form id="quiz" action="{{ url_for('submitResponses') }}" method="post"></form>
+		<div id="layout" class="place-items-center flex flex-col">
+
+			<h1 class="font-serif justify-start">
+				Answer questions on a scale between 1 and 5.
+				<br>
+				1 - agree the least
+				<br>
+				5 - agree the most
+
+			</h1>
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I am the life of the party.
+					</label>
+				</div>
+				<input name="q1" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I don't talk a lot.
+					</label>
+				</div>
+				<input name="q2" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I feel comfortable around people. </label>
+				</div>
+				<input name="q3" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I keep in the background. </label>
+				</div>
+				<input name="q4" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I start conversations. </label>
+				</div>
+				<input name="q5" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I have little to say. </label>
+				</div>
+				<input name="q6" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I talk to a lot of different people at parties. </label>
+				</div>
+				<input name="q7" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I don't like to draw attention to myself. </label>
+				</div>
+				<input name="q8" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I don't mind being the center of attention. </label>
+				</div>
+				<input name="q9" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I am quiet around strangers.</label>
+				</div>
+				<input name="q10" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I get stressed out easily. </label>
+				</div>
+				<input name="q11" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I am relaxed most of the time. </label>
+				</div>
+				<input name="q12" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I worry about things. </label>
+				</div>
+				<input name="q13" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I seldom feel blue. </label>
+				</div>
+				<input name="q14" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I am easily disturbed. </label>
+				</div>
+				<input name="q15" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I get upset easily. </label>
+				</div>
+				<input name="q16" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I change my mood a lot. </label>
+				</div>
+				<input name="q17" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I have frequent mood swings. </label>
+				</div>
+				<input name="q18" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I get irritated easily. </label>
+				</div>
+				<input name="q19" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I often feel blue. </label>
+				</div>
+				<input name="q20" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I feel little concern for others. </label>
+				</div>
+				<input name="q21" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I am interested in people. </label>
+				</div>
+				<input name="q22" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I insult people. </label>
+				</div>
+				<input name="q23" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I sympathize with others' feelings </label>
+				</div>
+				<input name="q24" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I am not interested in other people's problems. </label>
+				</div>
+				<input name="q25" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I have a soft heart. </label>
+				</div>
+				<input name="q26" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I am not really interested in others. </label>
+				</div>
+				<input name="q27" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I take time out for others. </label>
+				</div>
+				<input name="q28" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I feel others' emotions. </label>
+				</div>
+				<input name="q29" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I make people feel at ease. </label>
+				</div>
+				<input name="q30" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I am always prepared. </label>
+				</div>
+				<input name="q31" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I leave my belongings around. </label>
+				</div>
+				<input name="q32" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I pay attention to details. </label>
+				</div>
+				<input name="q33" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I make a mess of things. </label>
+				</div>
+				<input name="q34" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I get chores done right away. </label>
+				</div>
+				<input name="q35" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I often forget to put things back in their proper place. </label>
+				</div>
+				<input name="q36" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I like order. </label>
+				</div>
+				<input name="q37" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I shirk my duties. </label>
+				</div>
+				<input name="q38" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I follow a schedule. </label>
+				</div>
+				<input name="q39" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I am exacting in my work. </label>
+				</div>
+				<input name="q40" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I have a rich vocabulary. </label>
+				</div>
+				<input name="q41" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I have difficulty understanding abstract ideas. </label>
+				</div>
+				<input name="q42" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I have a vivid imagination. </label>
+				</div>
+				<input name="q43" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I am not interested in abstract ideas. </label>
+				</div>
+				<input name="q44" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I have excellent ideas. </label>
+				</div>
+				<input name="q45" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I do not have a good imagination. </label>
+				</div>
+				<input name="q46" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I am quick to understand things. </label>
+				</div>
+				<input name="q47" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I use difficult words. </label>
+				</div>
+				<input name="q48" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I spend time reflecting on things. </label>
+				</div>
+				<input name="q49" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<div class="mb-2 flex flex-row">
+				<div class="w-60 h-15 bg-white rounded shadow border-2 p-2 ">
+					<label class="block text-grey-darker text-sm font-bold mb-2  ">
+						I am full of ideas. </label>
+				</div>
+				<input name="q50" form="quiz"
+					   class="shadow appearance-none border rounded py-2 px-3 text-grey-darker"
+					   type="number" placeholder="1" max=5 min=1 value=0>
+			</div>
+
+			<input type="submit" form="quiz"
+				   class="bg-blue-400 hover:bg-blue-600  text-black font-bold py-2 px-4 rounded flex"
+				   value="See Results">
+
+		</div>
+
+
+	</div>
+
+{% endblock %}
