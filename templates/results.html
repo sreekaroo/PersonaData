@@ -117,7 +117,7 @@
 							<div><p class="text-gray-700 font-bold tracking-wider">Extraversion</p>
 								<p class="text-gray-400 text-xs">Averages for Country</p></div>
 						</div>
-						<span class="font-bold text-blue-600">10</span></div>
+						<span class="font-bold text-blue-600">{{ avgCountry.get('avg_ext') }}</span></div>
 
 					<div class="bg-pink-50 flex justify-between items-center p-3 rounded-sm shadow-sm">
 						<div class="flex justify-start items-center gap-2">
@@ -125,27 +125,27 @@
 							<div><p class="text-gray-700 font-bold tracking-wider">Neuroticism</p>
 								<p class="text-gray-400 text-xs">Averages for Country</p></div>
 						</div>
-						<span class="font-bold text-pink-500">10</span></div>
+						<span class="font-bold text-pink-500">{{ avgCountry.get('avg_neuro') }}</span></div>
 					<div class="bg-green-50 flex justify-between items-center p-3 rounded-sm shadow-sm">
 						<div class="flex justify-start items-center gap-2">
 
 							<div><p class="text-gray-700 font-bold tracking-wider">Agreeableness</p>
 								<p class="text-gray-400 text-xs">Averages for Country</p></div>
 						</div>
-						<span class="font-bold text-green-500">10</span></div>
+						<span class="font-bold text-green-500">{{ avgCountry.get('avg_agr') }}</span></div>
 					<div class="bg-indigo-50 flex justify-between items-center p-3 rounded-sm shadow-sm">
 						<div class="flex justify-start items-center gap-2">
 
 							<div><p class="text-gray-700 font-bold tracking-wider">Conscientiousness</p>
 								<p class="text-gray-400 text-xs">Averages for Country</p></div>
 						</div>
-						<span class="font-bold text-indigo-500">10</span></div>
+						<span class="font-bold text-indigo-500">{{ avgCountry.get('avg_cons') }}</span></div>
 					<div class="bg-yellow-50 flex justify-between items-center p-3 rounded-sm shadow-sm">
 						<div class="flex justify-start items-center gap-2">
 							<div><p class="text-gray-700 font-bold tracking-wider">Openness</p>
 								<p class="text-gray-400 text-xs">Averages for Country</p></div>
 						</div>
-						<span class="font-bold text-yellow-500">10</span>
+						<span class="font-bold text-yellow-500">{{ avgCountry.get('avg_open') }}</span>
 					</div>
 
 				</div>
@@ -222,25 +222,28 @@
 
 	<h3 class="text-black font-serif text-xl p-2 ">
 
-		<b>Openness </b> - People who like to learn new things and enjoy new experiences usually score high in openness.
-		Openness includes traits like being insightful and imaginative and having a wide variety of interests. <br>
-
-		<b>Conscientiousness</b> - People that have a high degree of conscientiousness are reliable and prompt. Traits
-		include
-		being organized, methodic, and thorough. <br>
-
 		<b>Extraversion</b> - Extraverts get their energy from interacting with others, while introverts get their
 		energy from
 		within themselves. Extraversion includes the traits of energetic, talkative, and assertive. <br>
 
-		<b>Agreeableness </b> - These individuals are friendly, cooperative, and compassionate. People with low
-		agreeableness
-		may be more distant. Traits include being kind, affectionate, and sympathetic. <br>
 
 		<b>Neuroticism</b> - Neuroticism is also sometimes called Emotional Stability. This dimension relates to one’s
 		emotional stability and degree of negative emotions. People that score high on neuroticism often experience
 		emotional instability and negative emotions. Traits include being moody and tense.
 		<br>
+
+
+		<b>Agreeableness </b> - These individuals are friendly, cooperative, and compassionate. People with low
+		agreeableness
+		may be more distant. Traits include being kind, affectionate, and sympathetic. <br>
+
+		<b>Conscientiousness</b> - People that have a high degree of conscientiousness are reliable and prompt. Traits
+		include
+		being organized, methodic, and thorough. <br>
+
+		<b>Openness </b> - People who like to learn new things and enjoy new experiences usually score high in openness.
+		Openness includes traits like being insightful and imaginative and having a wide variety of interests. <br>
+
 	</h3>
 
 {% endblock %}

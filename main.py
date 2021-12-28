@@ -171,6 +171,21 @@ def getEvaluation(traitScore, trait):
         return "You have high " + trait
 
 
+def getScore(startInd, endInd):
+    """gets the scores corresponding to the start and end index
+        for current user """
+
+    db = get_db()
+    cur = db.cursor()
+
+    cur.callproc('get_specific_scores', [session.get('username'), startInd, endInd])
+    rows = cur.fetchall()
+    scores = [q.get('resp') for q in rows]
+
+    cur.close()
+    return sum(scores)
+
+
 @app.route("/results", methods=['GET'])
 def results():
     """displays the results of the most recent quiz for the logged in user
@@ -179,33 +194,11 @@ def results():
     db = get_db()
     cur = db.cursor()
 
-    cur.callproc('get_specific_scores', [session.get('username'), 1, 10])
-    rows = cur.fetchall()
-    ExtraversionScores = [q.get('resp') for q in rows]
-
-    print(len(ExtraversionScores))
-
-    cur.callproc('get_specific_scores', [session.get('username'), 11, 20])
-    rows = cur.fetchall()
-    NeuroticismScores = [q.get('resp') for q in rows]
-
-    cur.callproc('get_specific_scores', [session.get('username'), 21, 30])
-    rows = cur.fetchall()
-    AgreeablenessScores = [q.get('resp') for q in rows]
-
-    cur.callproc('get_specific_scores', [session.get('username'), 31, 40])
-    rows = cur.fetchall()
-    ConscientiousnessScores = [q.get('resp') for q in rows]
-
-    cur.callproc('get_specific_scores', [session.get('username'), 41, 50])
-    rows = cur.fetchall()
-    OpennessScores = [q.get('resp') for q in rows]
-
-    Extraversion = sum(ExtraversionScores)
-    Neuroticism = sum(NeuroticismScores)
-    Agreeableness = sum(AgreeablenessScores)
-    Conscientiousness = sum(ConscientiousnessScores)
-    Openness = sum(OpennessScores)
+    Extraversion = getScore(1, 10)
+    Neuroticism = getScore(11, 20)
+    Agreeableness = getScore(21, 30)
+    Conscientiousness = getScore(31, 40)
+    Openness = getScore(41, 50)
 
     session['ext'] = Extraversion
     session['neuro'] = Neuroticism
@@ -213,6 +206,7 @@ def results():
     session['csn'] = Conscientiousness
     session['opn'] = Openness
 
+    # storing the results
     cur2 = db.cursor()
     cur2.callproc('store_personality',
                   [Agreeableness, Extraversion, Neuroticism, Openness, Conscientiousness, session.get('username')])
@@ -248,6 +242,8 @@ def results():
     avgCountry = cur.fetchone()
     cur.close()
 
+    print(avgCountry)
+    print(avgContinent)
     print(avgAllUsers)
 
     return render_template('results.html', ext=ExtraversionString, neuro=NeuroticismString,

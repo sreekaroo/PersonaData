@@ -149,17 +149,28 @@
 						<label class="block text-grey-darker text-sm font-bold mb-1" for="continent">
 							Continent
 						</label>
-						<input name="continent" form="register"
-							   class="shadow appearance-none border rounded w-full py-1 px-3 text-grey-darker"
-							   type="text" placeholder="Enter Continent">
+						{#						<input name="continent" form="register"#}
+						{#							   class="shadow appearance-none border rounded w-full py-1 px-3 text-grey-darker"#}
+						{#							   type="text" placeholder="Enter Continent">#}
 
-
+						<select form="register" name="continent" id="continent"
+								class="shadow appearance-none border rounded w-full py-1 px-3 text-grey-darker">
+							<option value="North America">North America</option>
+							<option value="Europe">Europe</option>
+							<option value="South America">South America</option>
+							<option value="Africa">Africa</option>
+							<option value="Asia">Asia</option>
+							<option value="Antarctica">Antarctica</option>
+							<option value="Australia">Australia</option>
+						</select>
 					</div>
 					<div class="flex items-center justify-between">
 						<input form="register"
 							   class="bg-green-400 hover:bg-green-600  text-black font-bold py-2 px-4 rounded"
 							   type="submit" value="Register">
 					</div>
+
+
 				</div>
 			</div>
 		</div>
