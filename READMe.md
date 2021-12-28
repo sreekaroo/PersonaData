@@ -21,3 +21,4 @@ Run main.py:
    navigate to your localhost's` url in a browser
 
 
+These instructions are only valid for those with required database. 
