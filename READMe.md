@@ -4,21 +4,19 @@
 
 [comment]: <> (directories. If you use a specific technology for the project, the technology’s download page must be listed.)
 
+
+**PersonaData **
+
+This Flask webapp allows for users to take the big 5 personality quiz and see how their results compare to other users, as well as users from a Kaggle dataset. 
+The results are stored in a mySQL database hosted through AWS. 
+
+
+
 **Instructions to Set up Personality Flask app:**
-Unzip the zip file
-
-First begin by running the FinalDatabaseProject.sql script to get the database schema and data associated with it. Be sure to remember the
-connection this database is stored under.
-
-Now, navigate to the DatabaseProject directory and attempt to <pip install -r requirements.txt_ Now you should have all the
-requirements necessary to run main.py.
 
 Run main.py:
 
-1. there should be prompts for you to input credentials regarding the connection to the database you should've
-   downloaded already
-2. Next, the flask app should begin running on your local host, simply click the link provided in the terminal or
-   navigate to your localhost's` url in a browser
+1. you may encounter an error if you don't have the credentials for database
 
 
 These instructions are only valid for those with required database. 
