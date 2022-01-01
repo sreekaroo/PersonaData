@@ -1,15 +1,15 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, g, session
 
-import get_credentials
+import rds_credentials
 from conection import Connection
 
 app = Flask(__name__)
 app.secret_key = "super secret key"
 
 # need to change these based on local credentials
-dbUsername = 'root'
-dbPassword = 'root'
-dbHost = 'localhost'
+dbUsername = rds_credentials.dbUsername
+dbPassword = rds_credentials.dbPassword
+dbHost = rds_credentials.dbHost
 
 
 def get_db():
