@@ -5,7 +5,7 @@
 [comment]: <> (directories. If you use a specific technology for the project, the technology’s download page must be listed.)
 
 
-**PersonaData **
+**PersonaData**
 
 This Flask webapp allows for users to take the big 5 personality quiz and see how their results compare to other users, as well as users from a Kaggle dataset. 
 The results are stored in a mySQL database hosted through AWS. 
