@@ -1,4 +1,4 @@
-# # need to change these based on local credentials
+
 # from conection import Connection
 #
 # connected = False
@@ -19,3 +19,8 @@
 #
 #     print("Try again: " + error)
 #
+
+# credentials for aws rds database instance
+dbUsername = 'sreekaroo'
+dbPassword = 'sabertooth'
+dbHost = 'persona-data-rds.c9dah5ykqjzd.us-east-1.rds.amazonaws.com'
