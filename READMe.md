@@ -7,16 +7,11 @@
 
 **PersonaData**
 
-This Flask webapp allows for users to take the big 5 personality quiz and see how their results compare to other users, as well as users from a Kaggle dataset. 
-The results are stored in a mySQL database hosted through AWS. 
+This Flask webapp allows for users to take the big 5 personality quiz and see how their results compare to other users, as well as 50 users from a Kaggle dataset(https://www.kaggle.com/tunguz/big-five-personality-test). 
+
+
+The results are stored in a mySQL database hosted through AWS. The actual flask application is deployed on Heroku and can be accessed through the url: https://persona-data.herokuapp.com/
 
 
 
-**Instructions to Set up Personality Flask app:**
 
-Run main.py:
-
-1. you may encounter an error if you don't have the credentials for database
-
-
-These instructions are only valid for those with required database. 
