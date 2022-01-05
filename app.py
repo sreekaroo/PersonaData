@@ -3,6 +3,8 @@ from flask import Flask, render_template, request, redirect, url_for, flash, g, 
 import rds_credentials
 from conection import Connection
 
+from waitress import serve
+
 app = Flask(__name__)
 app.secret_key = "super secret key"
 
@@ -254,4 +256,5 @@ def results():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    # app.run(host="0.0.0.0", port=8080, debug=True)
+    serve(app, host="0.0.0.0", port=8080)

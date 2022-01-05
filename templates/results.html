@@ -3,17 +3,20 @@
 {% block title %} Results! {% endblock %}
 
 {% block content %}
-	<div name="about" class="bg-blue-100 shadow rounded">
+	<div name="about" class=" flex items-center justify-between p-3 bg-blue-100 shadow rounded">
+
 		<h2 class=" text-red font-serif text-2xl p-2">
-			Look at who you are
+			Look at who you are compared to real data
 		</h2>
 
-		<h3 class=" text-black font-serif text-xl p-2">
-			View your scores compared to rest of users
-		</h3>
+		<a id="homeLink"
+		   href="{{ url_for('index') }}"
+		   class="text-xl p-2 leading-none border rounded font-serif text-black border-blue-100 bg-red-300
+			   hover:border-transparent hover:text-black hover:bg-white mt-4 md:mt-0"> Return Home </a>
+
 	</div>
 
-	<div class="flex xl:flex-row lg: flex-col">
+	<div class="flex xl:flex-row flex-col">
 		<div class="xl:w-4/12 lg:w-8-12 flex flex-row mt-10">
 			<div class="w-3/6 bg-white rounded-lg shadow-sm h-3/4 1 p-2">
 				<div class="flex justify-between items-center"><h1 class="font-extrabold tracking-wider">

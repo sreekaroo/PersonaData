@@ -20,6 +20,16 @@
 #
 
 # credentials for aws rds database instance
-dbUsername = 'sreekaroo'
-dbPassword = 'sabertooth'
-dbHost = 'persona-data-rds.c9dah5ykqjzd.us-east-1.rds.amazonaws.com'
+# dbUsername = 'sreekaroo'
+# dbPassword = 'sabertooth'
+# dbHost = 'persona-data-rds.c9dah5ykqjzd.us-east-1.rds.amazonaws.com'
+
+# dbUsername = 'b672ce15354ee7'
+# dbPassword = '3f365e80'
+# dbHost = 'us-cdbr-east-05.cleardb.net'
+
+dbUsername = 'root'
+dbPassword = 'root'
+dbHost = 'localhost'
+
+
